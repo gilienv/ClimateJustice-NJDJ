@@ -30,7 +30,7 @@ Follow these steps to run the Python project:
 1. **Clone the Repository:** Start by cloning the project repository from GitHub or any other version control platform.
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/itsabdullah15/ClimateJusticeInternship.git
     ```
 
 2. **Navigate to Project Directory:** Use the `cd` command to navigate to the directory where the project is located.
