@@ -62,7 +62,7 @@ Follow these steps to run the Python project:
 
 6. **Follow On-Screen Instructions:** Depending on the project, you may need to follow on-screen instructions or provide input when prompted.
 
-7. **View Results:** After the project finishes running, you can view the results in the specified output folder or according to the project's output mechanism.
+7. **View Results:** Once the bot has completed its execution, you can examine the outcomes located within the designated output folder. Within this folder, organized by the current date, you'll find two CSV files. The first, labeled "Audit_log," contains the extracted case data. Meanwhile, the second file, named "error_log," documents cases the bot couldn't extract due to website errors.
 
 8. **Troubleshooting:** If you encounter any issues while running the project, refer to the project's documentation or reach out to the project maintainers for assistance.
 
