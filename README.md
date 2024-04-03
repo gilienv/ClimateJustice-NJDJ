@@ -10,7 +10,7 @@ For more information about NJDG, please visit [National Judicial Data Grid](http
 ## Table of Contents
 
 - [Dependencies](#dependencies)
-- [Usage](#usage)
+- [Files](#files)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -24,13 +24,12 @@ For more information about NJDG, please visit [National Judicial Data Grid](http
 - **Pytesseract**: Python binding to the Tesseract OCR engine for extracting text from images.
 
 
-## Usage
+## Files
 
-Instructions and examples for usage of your project.
+The `main.py` file contains all the code and logic for extracting case details from the National Judicial Data Grid (NJDG) web app. This file handles the navigation through the website, the process of clicking on total cases, solving CAPTCHAs, and extracting case details. The script runs in a loop until data from the specified states is successfully extracted.
 
-## Contributing
+The `mappingfile.py` contains important dynamic paths and configurations required for the bot to run smoothly. It serves as a configuration file where variables related to paths, URLs, or any other dynamic elements are stored. These variables may need to be adjusted based on the environment or specific requirements of the bot's execution.
 
-Guidelines for contributing to the project.
 
 ## Contact
 
