@@ -2,23 +2,25 @@
 
 ## Description
 
-## Description
-
 This Python script is designed to extract case details from the National Judicial Data Grid (NJDG) web app using Selenium WebDriver and save them to a CSV file. The script navigates through the website with respect to state names, clicks on total cases, then proceeds and solves 2 CAPTCHAs internally. After solving them, it extracts case details and saves them to a CSV file. This logic runs in a loop until data from the specified states is extracted.
 
 For more information about the National Judicial Data Grid (NJDG) web app, visit [here](https://njdg.ecourts.gov.in/).
 
+
 ## Table of Contents
 
-- [Installation](#installation)
+- [Dependencies](#dependencies)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
-## Installation
+## Dependencies
 
-Instructions on how to install and use your project.
+- **Selenium**: A Python library for automating web browsers.
+- **Pytesseract**: Python binding to the Tesseract OCR engine for extracting text from images.
+- **OpenCV**: A library for computer vision and image processing tasks. Used to enhance the captcha image for text extraction.
+- **Firefox WebDriver**: WebDriver for the Firefox browser. Automatically managed by `webdriver_manager`.
 
 ## Usage
 
