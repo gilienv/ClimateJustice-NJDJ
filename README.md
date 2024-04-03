@@ -12,7 +12,7 @@ For more information about NJDG, please visit [National Judicial Data Grid](http
 - [Dependencies](#dependencies)
 - [Files](#files)
 - [Contact](#contact)
-- [Important_Notes](#important Notes)
+- [Important Notes](#important-notes)
 
 ## Dependencies
 
