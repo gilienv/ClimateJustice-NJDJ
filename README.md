@@ -23,6 +23,52 @@ For more information about NJDG, please visit [National Judicial Data Grid](http
 - **Pytesseract**: Python binding to the Tesseract OCR engine for extracting text from images.
 
 
+## How to Run the Python Project
+
+Follow these steps to run the Python project:
+
+1. **Clone the Repository:** Start by cloning the project repository from GitHub or any other version control platform.
+
+    ```bash
+    git clone <repository_url>
+    ```
+
+2. **Navigate to Project Directory:** Use the `cd` command to navigate to the directory where the project is located.
+
+    ```bash
+    cd project_directory
+    ```
+
+3. **Install Dependencies:** Before running the project, make sure you have all the necessary dependencies installed. You can install them using the `requirements.txt` file.
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Update Configuration (if necessary):** If your project requires any configuration settings, make sure to update them in the appropriate configuration files. For example, you may need to modify paths in the `mapping.py` file.
+
+    ```python
+    # mapping.py
+
+    # Update paths according to your environment
+    OUTPUT_FOLDER = 'path/to/output/folder'
+    ```
+
+5. **Run the Project:** Once everything is set up, you can run the project using the main Python file. 
+
+    ```bash
+    python main.py
+    ```
+
+6. **Follow On-Screen Instructions:** Depending on the project, you may need to follow on-screen instructions or provide input when prompted.
+
+7. **View Results:** After the project finishes running, you can view the results in the specified output folder or according to the project's output mechanism.
+
+8. **Troubleshooting:** If you encounter any issues while running the project, refer to the project's documentation or reach out to the project maintainers for assistance.
+
+Following these steps should allow you to successfully run the Python project on your local machine. Remember to update any necessary configuration settings before running the project.
+
+
 ## Files
 
 The `main.py` file contains all the code and logic for extracting case details from the National Judicial Data Grid (NJDG) web app. This file handles the navigation through the website, the process of clicking on total cases, solving CAPTCHAs, and extracting case details. The script runs in a loop until data from the specified states is successfully extracted.
