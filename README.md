@@ -11,9 +11,8 @@ For more information about NJDG, please visit [National Judicial Data Grid](http
 
 - [Dependencies](#dependencies)
 - [Files](#files)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
+- [Important Notes](#Important Notes)
 
 ## Dependencies
 
@@ -29,6 +28,12 @@ For more information about NJDG, please visit [National Judicial Data Grid](http
 The `main.py` file contains all the code and logic for extracting case details from the National Judicial Data Grid (NJDG) web app. This file handles the navigation through the website, the process of clicking on total cases, solving CAPTCHAs, and extracting case details. The script runs in a loop until data from the specified states is successfully extracted.
 
 The `mappingfile.py` contains important dynamic paths and configurations required for the bot to run smoothly. It serves as a configuration file where variables related to paths, URLs, or any other dynamic elements are stored. These variables may need to be adjusted based on the environment or specific requirements of the bot's execution.
+
+
+## Important Notes
+
+- Ensure an active internet connection as the script interacts with a live website.
+- The script assumes the structure of the website remains unchanged. Any changes in the website structure may require modifications to the XPath expressions used in the script.
 
 
 ## Contact
