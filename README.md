@@ -24,10 +24,6 @@ Instructions and examples for usage of your project.
 
 Guidelines for contributing to the project.
 
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
-If you have any questions or concerns, feel free to contact me at [email@example.com](mailto:email@example.com).
+If you encounter any difficulties during the process of downloading dependencies or executing the Python scripts, feel free to reach out for assistance. You can contact me via email at itsabdullah.cg@gmail.com or message me on WhatsApp at +91 9540743471. I'm here to help you resolve any issues and ensure a smooth experience with the setup and usage of the provided scripts.
