@@ -83,12 +83,11 @@ def delete_png_files(folder_path):
 delete_png_files(IDENS.capctcha_folder_path)
 
 driver = webdriver.Firefox()
-url = IDENS.link #Assigning Website Link
+url = IDENS.state_link #Assigning Website Link
 driver.get(url)
 driver.maximize_window() #maximize the window
 driver.execute_script("window.scrollTo(0, 500);")
 time.sleep(1)
-
 
 ''' STEP 1 == Clicking on 20-30 year Total link'''
 # xpath = '//a[@href="javascript:fetchYearData(\'tot20_30\',1)"]'s
@@ -591,14 +590,17 @@ Cases = []
 ''' STEP 5 == Fourth Loop'''
 def fourth_button_district():
     try:
+        time.sleep(1)
         xpath = "(//tbody[@id='est_report_body']/tr/td[4]/a)"
         wait = WebDriverWait(driver, 20)
         elements = wait.until(EC.presence_of_all_elements_located((By.XPATH, xpath)))
-        print("OOOOOOOOOOOOOOOOOOOO" ,len(elements))
-        # countt = 1
+        # print("OOOOOOOOOOOOOOOOOOOO" ,len(elements))
+        fourth_button_district_row = 1
+        time.sleep(0.5)
         for element in elements:
-            # if countt <= 4:
-            #     countt += 1
+            # print("OKAYYYYYYYYYYY")
+            # if fourth_button_district_row <= 4:
+            #     fourth_button_district_row += 1
             #     continue
             try:
                 time.sleep(0.5)
@@ -629,13 +631,13 @@ def third_button_state():
     wait = WebDriverWait(driver, 20)
     elements = wait.until(EC.presence_of_all_elements_located((By.XPATH, xpath)))
     print("Len", len(elements))
-    # count = 1
+    third_button_state_row = 1
     for element in elements:
-        # if count<=5:
-        #     count+=1
+        # if third_button_state_row<=5:
+        #     third_button_state_row+=1
         #     continue
         element.click()
-        time.sleep(0.5)
+        time.sleep(1.5)
         fourth_button_district()
         time.sleep(0.5)
     print("Total Count of Cases: ",len(Cases))
@@ -643,6 +645,7 @@ def third_button_state():
 
 def second_button_year():
     try:
+        time.sleep(2)
         xpath = "(//tbody[@id='state_report_body']/tr/td[4]/a)"
         element = driver.find_element(By.XPATH, xpath)
         element.click()
@@ -657,13 +660,13 @@ def first_loop():
     wait = WebDriverWait(driver, 20)
     try:
         while True:
-            skip = 1
+            first_loop_row = 1
             elements = wait.until(EC.presence_of_all_elements_located((By.XPATH, button_xpath)))
             print("Countttt ",len(elements))
             for element in elements:
-                if skip<=2:
-                    skip+=1
-                    continue
+                # if first_loop_row<=1:
+                #     first_loop_row+=1
+                #     continue
                 element.click()
                 time.sleep(1.5)
                 second_button_year()
