@@ -82,7 +82,6 @@ def delete_png_files(folder_path):
 
 delete_png_files(IDENS.capctcha_folder_path)
 
-
 driver = webdriver.Firefox()
 url = IDENS.andaman_nicobar #Assigning Website Link
 driver.get(url)
