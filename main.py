@@ -83,7 +83,7 @@ def delete_png_files(folder_path):
 delete_png_files(IDENS.capctcha_folder_path)
 
 driver = webdriver.Firefox()
-url = IDENS.andaman_nicobar #Assigning Website Link
+url = IDENS.link #Assigning Website Link
 driver.get(url)
 driver.maximize_window() #maximize the window
 driver.execute_script("window.scrollTo(0, 500);")
@@ -105,6 +105,7 @@ def captcha_solve_loop():
         current_datetime = current_datetime.strftime("%d_%m_%Y_%H_%M_%S")
         img_download_path = f'CaptchaImg/{current_datetime}.png'
 
+        time.sleep(1.5)
         image_element = driver.find_element(By.XPATH, "//img[@id='captcha_image1']")
         location = image_element.location
         size = image_element.size
@@ -258,7 +259,6 @@ def error_log_file(error_log):
         csv_writer = csv.writer(csv_file)
         csv_writer.writerow(error_log)
         delete_png_files(IDENS.capctcha_folder_path)
-
 
 def data_extract_from_csv_file():
     iframe = driver.find_element(By.ID, 'case_history')     # Find the iframe element
@@ -589,11 +589,12 @@ def last_fourth_back():
 Cases = []
 
 ''' STEP 5 == Fourth Loop'''
-def fourth_loop():
+def fourth_button_district():
     try:
         xpath = "(//tbody[@id='est_report_body']/tr/td[4]/a)"
         wait = WebDriverWait(driver, 20)
         elements = wait.until(EC.presence_of_all_elements_located((By.XPATH, xpath)))
+        print("OOOOOOOOOOOOOOOOOOOO" ,len(elements))
         # countt = 1
         for element in elements:
             # if countt <= 4:
@@ -622,8 +623,9 @@ def fourth_loop():
         print(f"An unexpected error occurred: {e}")
 
 ''' STEP 4 == Clicking on 20-30 year Total link'''
-def third_loop():
+def third_button_state():
     xpath = "(//tbody[@id='dist_report_body']/tr/td[4]/a)"
+    time.sleep(1)
     wait = WebDriverWait(driver, 20)
     elements = wait.until(EC.presence_of_all_elements_located((By.XPATH, xpath)))
     print("Len", len(elements))
@@ -632,19 +634,22 @@ def third_loop():
         # if count<=5:
         #     count+=1
         #     continue
-        time.sleep(1)
         element.click()
         time.sleep(0.5)
-        fourth_loop()
+        fourth_button_district()
         time.sleep(0.5)
-        # print("Breaking")
     print("Total Count of Cases: ",len(Cases))
 
 
-def second_loop_both_button_clicked_single_row_column():
-    xpath = "(//tbody[@id='state_report_body']/tr/td[4]/a)"
-    element = driver.find_element(By.XPATH, xpath)
-    element.click()
+def second_button_year():
+    try:
+        xpath = "(//tbody[@id='state_report_body']/tr/td[4]/a)"
+        element = driver.find_element(By.XPATH, xpath)
+        element.click()
+    except NoSuchElementException:
+        print("Element not found. Handle the exception accordingly.")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
 
 ''' STEP 2 == Clicking on 20-30 year Total link'''
 def first_loop():
@@ -656,14 +661,14 @@ def first_loop():
             elements = wait.until(EC.presence_of_all_elements_located((By.XPATH, button_xpath)))
             print("Countttt ",len(elements))
             for element in elements:
-                if skip<=9:
+                if skip<=2:
                     skip+=1
                     continue
                 element.click()
-                time.sleep(1)
-                second_loop_both_button_clicked_single_row_column()
-                time.sleep(1)
-                third_loop()
+                time.sleep(1.5)
+                second_button_year()
+                time.sleep(1.5)
+                third_button_state()
                 time.sleep(1)
                 last_third_back()
                 time.sleep(1)
